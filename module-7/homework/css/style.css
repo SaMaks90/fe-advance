@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(199, 197, 197);
+}
+
+ul {
+    list-style: none;
+}
+
+.topRow,
+.middleRow,
+.bottomRow {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.topRow li,
+.middleRow li,
+.bottomRow li {
+    border: 1px solid rgb( 125, 125, 125);
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    font-size: 36px;
+    background: rgb(172, 219, 150);
+}
+
+.topRow li:nth-of-type(1),
+.middleRow li:nth-of-type(1),
+.bottomRow li:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.topRow li:active,
+.middleRow li:active,
+.bottomRow li:active {
+    background: rgb(182, 67, 67);
+    color: rgb( 255, 255, 255);
+}
