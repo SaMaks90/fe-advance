@@ -24,43 +24,9 @@ const keyboard = {
         const userKeyboard = document.createElement('div');
         userKeyboard.classList.add('keyboard');
 
-        let lang;
-        if(this.currentLang === 'en'){ 
-            lang = this.layouts.en;
-        } else if(this.currentLang === 'ru'){
-            lang = this.layouts.ru;
-        } else {
-            lang = this.layouts.ua;
-        }
+        let lang = this.layouts[this.currentLang];
 
-        const topRow = document.createElement('ul');
-        topRow.classList.add('topRow');
-
-        for(let i = 0; i < lang.topRow.length; i++){
-            let a = document.createElement('li')
-            a.textContent = lang.topRow[i];
-            topRow.append(a);
-        }
-
-        const middleRow = document.createElement('ul');
-        middleRow.classList.add('middleRow');
-
-        for(let i = 0; i < lang.middleRow.length; i++){
-            let a = document.createElement('li')
-            a.textContent = lang.middleRow[i];
-            middleRow.append(a);
-        }
-
-        const bottomRow = document.createElement('ul');
-        bottomRow.classList.add('bottomRow');
-
-        for(let i = 0; i < lang.bottomRow.length; i++){
-            let a = document.createElement('li')
-            a.textContent = lang.bottomRow[i];
-            bottomRow.append(a);
-        }
-
-        userKeyboard.append(topRow, middleRow, bottomRow);
+        userKeyboard.append(fillString(lang.topRow, 'topRow'), fillString(lang.middleRow, 'middleRow'), fillString(lang.bottomRow, 'bottomRow'));
         return userKeyboard;
     }
 };
@@ -99,4 +65,17 @@ function alphabet(){
     return alphabetEn.map((elem, i, alphabetEn) => (i <= alphabetEn.indexOf(']')) ? keyboard.layouts.en.topRow.push(elem) : (i >= alphabetEn.indexOf('a') && i <= alphabetEn.indexOf('\'')) ? keyboard.layouts.en.middleRow.push(elem) : keyboard.layouts.en.bottomRow.push(elem)) 
 && alphabetRu.map((elem, i, alphabetRu) => (i <= alphabetRu.indexOf('ъ')) ? keyboard.layouts.ru.topRow.push(elem) : (i >= alphabetRu.indexOf('ф') && i <= alphabetRu.indexOf('э')) ? keyboard.layouts.ru.middleRow.push(elem) : keyboard.layouts.ru.bottomRow.push(elem)) 
 && alphabetUa.map((elem, i, alphabetUa) => (i <= alphabetUa.indexOf('ї')) ? keyboard.layouts.ua.topRow.push(elem) : (i >= alphabetUa.indexOf('ф') && i <= alphabetUa.indexOf('є')) ? keyboard.layouts.ua.middleRow.push(elem) : keyboard.layouts.ua.bottomRow.push(elem));
+}
+
+function fillString (str, classBoard){
+    const stringRow = document.createElement('ul');
+    stringRow.classList.add(classBoard);
+
+    for(let i = 0; i < str.length; i++){
+        let symbol = document.createElement('li');
+        symbol.textContent = str[i];
+        stringRow.append(symbol);
+    }
+
+    return stringRow;
 }
