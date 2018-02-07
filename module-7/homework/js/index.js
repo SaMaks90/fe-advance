@@ -38,14 +38,16 @@ while(true) {
     let language = prompt('Какой язык вы хотите использовать на тренажере: 0 - Английский, 1 - Русский, 2 - Украинский:');
     
     if(language === '0' || language === '1' || language === '2'){
-        if(language === '0'){
-            keyboard.currentLang = 'en';
-        } else if(language === '1'){
-            keyboard.currentLang = 'ru';
-        } else {
-            keyboard.currentLang = 'ua';
-        }
+        // if(language === '0'){
+        //     keyboard.currentLang = 'en';
+        // } else if(language === '1'){
+        //     keyboard.currentLang = 'ru';
+        // } else {
+        //     keyboard.currentLang = 'ua';
+        // }
         
+        keyboard.currentLang = keyboard.langs[+language];
+
         container.append(keyboard.createLayout());
         break;
     }else if(language === null){
