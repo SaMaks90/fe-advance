@@ -77,6 +77,9 @@ function spaceClass (){
   space.classList.add('keyboard__btn--space');
 }
 
+// let i = 0;
+// let note = ++i % 7;
+
 function randomNumber(){
   return Math.floor(Math.random() * keyboard.note.length);
 }
