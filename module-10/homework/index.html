@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module-10 Homework</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <p class="timer">0</p>
+    <div class="exercise">
+        
+    </div>
+    <div class="exercise__last">
+
+    </div>
+    <div class="result">
+
+    </div>
+    <div class="keyboard">
+
+    </div>
+    
+    <!-- Template -->
+    <script type="text/template" id="keyboard__template">
+        <div class="keyboard__row">
+            <% data.forEach(item => { %>
+                <button class="keyboard__btn"><%- item %></button>
+            <% }); %>
+        </div>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
