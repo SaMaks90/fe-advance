@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework Module-11</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Form get list users -->
+        <form class="get-form">
+            <button class="mdc-btn" type="submit" id="js-get">get</button>
+        </form>
+
+        <!-- Form add user with name and score -->
+        <form class="add-form">
+            <input class="add_userName" type="text" name="user_name" placeholder="Enter user name">
+            <input class="add_userScore" type="text" name="user_scope" placeholder="Enter user scope">
+            <button class="mdc-btn" type="submit" id="js-add">add</button>
+        </form>
+
+        <!-- Form delete user for id -->
+        <form class="delete-form">
+            <input id='del_userId' type="text" name="user_id" placeholder="Enter id user">
+            <button class="mdc-btn" type="submit" id="js-delete">delete</button>
+        </form>
+
+
+        <!-- Form update user for id -->
+        <form class="update-form">
+            <input id="upd_userId" type="text" name="user_id" placeholder="Enter user id">
+            <input id="upd_userName" type="text" name="user_name" placeholder="Enter user name">
+            <input id="upd_userScore" type="text" name="user_scope" placeholder="Enter user scope">
+            <button class="mdc-btn" type="submit" id="js-update">update</button>
+        </form>
+        
+        <div class="result"></div>
+    </div>
+
+    <!-- Template -->
+    <script type="text/template" id="users_list">
+        <tr>
+            <td><%- id %></td>
+            <td><%- name %></td>
+            <td><%- score %></td>
+        </tr>    
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
