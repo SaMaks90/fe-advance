@@ -1,0 +1,13 @@
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 10rem;
+    height: 2rem;
+}
+
+.container button {
+    outline: none;
+    width: 3.5rem;
+    text-transform: uppercase;
+}
