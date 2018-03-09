@@ -16,15 +16,15 @@ class Shape {
         this.initY = initY;
     }
 
-    getColor(){
+    get Color(){
         return this.color;
     }
 
-    setColor(value){
+    set Color(value){
         this.color = value;
     }
 
-    getCoords(){
+    get Coords(){
         return `(x: ${this.initX}, Y: ${this.initY})`;
     }
 
@@ -56,26 +56,26 @@ class Rectangle extends Shape {
         this.initHeight = initHeight;        
     }
 
-    setWidth(value){
+    set Width(value){
         this.initWidth = value;
     }
 
-    setHeight(value){
+    set Height(value){
         this.initHeight = value;
     }
 
-    getDims(){
+    get Dims(){
         return `width: ${this.initWidth}, 
             height: ${this.initHeight}`;
     }
 
-    draw(){
+    get draw(){
         console.log(`
         Drawing a Rectangle at:
-            ${this.getCoords()}
+            ${this.Coords}
         Width dimentions:
-            ${this.getDims()}
-        Filled with color: ${this.getColor()}`);
+            ${this.getDims}
+        Filled with color: ${this.Color}`);
     }
 }
 
@@ -88,7 +88,7 @@ const rectangle = new Rectangle({
     initHeight: 20
 });
 
-rectangle.draw();
+rectangle.draw;
 
 /*
 - Создать класс Circle который расширяет класс Shape, принимая 
@@ -107,21 +107,21 @@ class Circle extends Shape {
         this.initRadius = initRadius;
     }
 
-    getRadius(){
+    get Radius(){
         return this.initRadius;
     }
 
-    setRadius(value){
+    set Radius(value){
         this.initRadius = value;
     }
 
-    draw(){
+    get draw(){
         console.log(`
         Drawing a Circle at:
-            ${this.getCoords()}
+            ${this.Coords}
         Width dimentions:
-            radius: ${this.getRadius()}
-        Filled with color: ${this.getColor()}
+            radius: ${this.Radius}
+        Filled with color: ${this.Color}
         `);
     }
 }
@@ -134,4 +134,4 @@ const circle = new Circle({
     initRadius: 100
 });
 
-circle.draw();
+circle.draw;
