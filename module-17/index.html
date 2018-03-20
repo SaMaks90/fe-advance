@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Webpack</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form action="#" class="language">
+    <label for="language">
+      <input value="en" type="radio" name="language" checked>Eng
+      <input value="ru" type="radio" name="language">Rus
+      <input value="ua" type="radio" name="language">Ukr
+    </label>
+  </form>
+  <div class="timer"></div>
+  <div class="result"></div>
+  <div class="error"></div>
+  <div class="error__last"></div>
+
+  <div class="keyboard__exercies">
+
+  </div>
+
+  <div class="keyboard">
+      
+  </div>
+
+  <!-- Template keyboard -->
+  <script type="text/template" id="keyboard__template">
+    <% dataRow.forEach(item => { %>
+      <div class="keyboard__row">
+        <% dataWord[item].forEach(itemAlph => { %>
+          <button class="keyboard__btn"><%- itemAlph %></button>
+        <% }); %>
+      </div>
+    <% }); %>
+  </script>
+
+  <!-- Template exercies-->
+  <script type="text/template" id="keyboard__exercies">
+    <div class="keyboard__row">
+      <% data.forEach(item => { %>
+        <button class="keyboard__btnEx"><%- item %></button>
+      <% }); %>
+    </div>
+  </script>
+
+  <script src="./dist/bundle.js"></script>
+</body>
+</html>
